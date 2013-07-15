@@ -1,0 +1,10 @@
+{
+  "name": "angular-uploadr",
+  "version": "1.0.0",
+  "main": "angular-uploadr.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}
