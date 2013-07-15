@@ -18,3 +18,5 @@ If it's a controller:
     angular.controller('MyController', function ($scope, uploadr) {
       // your code
     });
+
+[Here's an example using a directive for file input.](http://jsbin.com/idepoq/6/edit)
