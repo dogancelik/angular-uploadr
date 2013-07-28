@@ -64,4 +64,4 @@ Starts the upload.
 
 ## Links
 * [Read docs for $http](http://docs.angularjs.org/api/ng.$http)
-* [Read annotated source of uploadr](http://rawgithub.com/dogancelik/angular-uploadr/docs/angular-uploadr.html)
+* [Read annotated source of uploadr](https://rawgithub.com/dogancelik/angular-uploadr/master/docs/angular-uploadr.html)
