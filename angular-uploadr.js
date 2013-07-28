@@ -18,7 +18,7 @@ angular.module('ngUploadr', []).service('uploadr', function ($http, $q, $rootSco
       _config = {},
       _empty = true;
   
-  /* Resets all fields */
+  // Resets all fields
   this.clear = function () {
     _data = new FormData();
     _empty = true;
@@ -26,7 +26,7 @@ angular.module('ngUploadr', []).service('uploadr', function ($http, $q, $rootSco
     return this;
   };
 
-  /* Sets upload URL */
+  // Sets upload URL
   this.url = function (url) {
     _url = url;
     _empty = false;
@@ -34,10 +34,9 @@ angular.module('ngUploadr', []).service('uploadr', function ($http, $q, $rootSco
     return this;
   };
 
-  /*
-    Adds a field to form
-    Use this for non-file fields
-   */
+  // Adds a field to form
+  //
+  // Use this for non-file fields
   this.field = function (name, data) {
     _data.append(name, data);
     _empty = false;
@@ -45,15 +44,13 @@ angular.module('ngUploadr', []).service('uploadr', function ($http, $q, $rootSco
     return this;
   };
 
-  /*
-    Adds a file to form
-    Use this for files
-    Optionally use second argument name for custom field name
-  */
+  // Adds a file to form. Use this for files *only*.
+  //
+  // Optionally use second argument name for custom field name
   this.files = function (files, name) {
     name = name || "files";
 
-    /* If it's a single file add it to an array for iteration */
+    // If it's a single file add it to an array for iteration
     if (files instanceof File) {
       files = [files];
     }
@@ -67,7 +64,7 @@ angular.module('ngUploadr', []).service('uploadr', function ($http, $q, $rootSco
     return this;
   };
 
-  /* Gets final config for $http */
+  // Gets final config for $http
   function config() {
     var url_and_data = {
       url: _url,
@@ -77,14 +74,14 @@ angular.module('ngUploadr', []).service('uploadr', function ($http, $q, $rootSco
     return angular.extend({}, _defaultConfig, url_and_data, _config);
   }
 
-  /* Sets options for $http*/
+  // Sets options for $http
   this.config = function (config) {
     _config = config;
 
     return this;
   };
 
-  /* Starts the upload */
+  // Starts the upload
   this.upload = function () {
     if (_empty == true) {
       throw "Data is empty; use field() or files().";
@@ -94,6 +91,7 @@ angular.module('ngUploadr', []).service('uploadr', function ($http, $q, $rootSco
       throw "URL is empty; use url().";
     }
 
+    // If rootScope is not in a digest cycle, trigger one
     if($rootScope.$$phase) {
       return $http(config());
     } else {
