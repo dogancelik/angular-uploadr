@@ -1,6 +1,7 @@
-/**
- * angular-uploadr v1.0.0
- * (c) 2013 Doğan Çelik http://dogancelik.com
+/*
+ * @license
+ * angular-uploadr v0.1.0
+ * (c) 2014 Doğan Çelik http://dogancelik.com
  * License: MIT
  */
 angular.module('ngUploadr', []).service('uploadr', function ($http, $q, $rootScope) {

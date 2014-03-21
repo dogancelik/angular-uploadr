@@ -1,10 +1,17 @@
 {
   "name": "angular-uploadr",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "angular-uploadr.js",
+  "authors": [
+    "Doğan Çelik"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
     "components"
-  ]
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.2.6"
+  }
 }
